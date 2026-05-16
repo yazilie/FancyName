@@ -5,6 +5,8 @@ Nick yourself—or stylize your existing username. Everyone using the mod will b
 ## Usage
 In-game, type `/fancy set <minimessage>`
 
+It is recommended to keep your original username text the same, as some people have the 'Style Changes Only' option enabled.
+
 ### Example
 `/fancy set <gradient:#FF76C1:#FFFFFF>yazilie</gradient>`
 
