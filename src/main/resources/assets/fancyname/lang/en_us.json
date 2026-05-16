@@ -1,8 +1,19 @@
 {
-  "text.fancyname.set": "Set Fancy Name to %s",
-  "text.fancyname.refresh": "Refreshed all player's names",
+  "command.fancyname.set": "Set Fancy Name to %s",
+  "command.fancyname.refresh": "Refreshed all player's names",
+  "command.fancyname.enabled": "Enabled FancyName",
+  "command.fancyname.disabled": "Disabled FancyName",
+
   "exception.fancyname.set": "Failed to set Fancy Name. This is likely due to a lack of internet or invalid session",
   "exception.fancyname.ratelimit": "Rate limit exceeded. Please slow down",
   "exception.fancyname.api": "Failed to access FancyName API",
-  "exception.fancyname.authentication": "Failed to authenticate with FancyName API. This is likely due to a lack of internet or an invalid session"
+  "exception.fancyname.authentication": "Failed to authenticate with FancyName API. This is likely due to a lack of internet or an invalid session",
+
+  "text.config.fancyname.title": "FancyName Config",
+  "text.config.fancyname.option.enabled": "Enabled",
+  "text.config.fancyname.option.onlyStyles": "Style changes only",
+  "text.config.fancyname.option.onlyStyles.tooltip": "Only allow nicknames that keep the original username text, while still allowing custom styles.",
+
+  "text.config.fancyname.option.playerList": "Player list",
+  "text.config.fancyname.option.nameTags": "Name tags"
 }
