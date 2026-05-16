@@ -18,4 +18,4 @@ You can use [Birdflop](https://www.birdflop.com/resources/rgb/) to generate styl
 - Disable nicknames in the player list
 - Disable nicknames in game
 
-Access the config via [Mod Menu](https://modrinth.com/mod/modmenu)
+Access the config via [Mod Menu](https://modrinth.com/mod/modmenu), or turn it on/off in-game with `/fancy <on|off>`
