@@ -1,0 +1,8 @@
+{
+  "text.fancyname.set": "Set Fancy Name to %s",
+  "text.fancyname.refresh": "Refreshed all player's names",
+  "exception.fancyname.set": "Failed to set Fancy Name. This is likely due to a lack of internet or invalid session",
+  "exception.fancyname.ratelimit": "Rate limit exceeded. Please slow down",
+  "exception.fancyname.api": "Failed to access FancyName API",
+  "exception.fancyname.authentication": "Failed to authenticate with FancyName API. This is likely due to a lack of internet or an invalid session"
+}

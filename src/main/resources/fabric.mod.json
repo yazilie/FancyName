@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "fancyname",
+  "version": "${version}",
+  "name": "FancyName",
+  "description": "Custom name formatting with MiniMessage. Visible to all FancyName users!",
+  "authors": [ "yazilie" ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/fancyname/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "io.github.yazilie.fancyname.FancyName"
+    ]
+  },
+  "mixins": [
+    "fancyname.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "fabric-language-kotlin": "*"
+  }
+}
