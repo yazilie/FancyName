@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version "$loom_version"
+    id 'net.fabricmc.fabric-loom' version "$loom_version"
 }
 
 version = "${project.mod_version}+${project.minecraft_version}"
@@ -17,14 +17,14 @@ repositories {
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
     implementation "net.kyori:adventure-api:${project.adventure_version}"
     implementation "net.kyori:adventure-text-minimessage:${project.adventure_version}"
-    modImplementation "net.kyori:adventure-platform-fabric:${project.adventure_fabric_version}"
+    implementation "net.kyori:adventure-platform-fabric:${project.adventure_fabric_version}"
 
     implementation include("com.squareup.okhttp3:okhttp:${project.okhttp_version}")
     implementation include("com.squareup.okio:okio:${project.okio_version}")
@@ -32,9 +32,9 @@ dependencies {
 
     implementation "com.google.code.gson:gson:${project.gson_version}"
 
-    modImplementation "io.wispforest:owo-lib:${project.owo_version}"
+    implementation "io.wispforest:owo-lib:${project.owo_version}"
     include "io.wispforest:owo-sentinel:${project.owo_version}"
-    annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
+    annotationProcessor implementation("io.wispforest:owo-lib:${project.owo_version}")
 }
 
 processResources {
@@ -50,7 +50,7 @@ processResources {
     }
 }
 
-def targetJavaVersion = 21
+def targetJavaVersion = 25
 tasks.withType(JavaCompile).configureEach {
     // ensure that the encoding is set to UTF-8, no matter what the system default is
     // this fixes some edge cases with special characters not displaying correctly

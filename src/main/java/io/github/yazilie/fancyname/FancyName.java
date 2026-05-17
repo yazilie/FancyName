@@ -3,7 +3,7 @@ package io.github.yazilie.fancyname;
 import io.github.yazilie.fancyname.command.FancyNameCommand;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientWorldEvents;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLevelEvents;
 import net.minecraft.network.chat.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ public class FancyName implements ClientModInitializer {
     }
 
     private static void registerCacheRefresher() {
-        ClientWorldEvents.AFTER_CLIENT_WORLD_CHANGE.register((client, world) -> {
+        ClientLevelEvents.AFTER_CLIENT_LEVEL_CHANGE.register((_, _) -> {
             FancyNameAPI.refreshNames();
             TextEditor.cleanCache();
         });
