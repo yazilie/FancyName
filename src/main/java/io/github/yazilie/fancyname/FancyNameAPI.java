@@ -109,7 +109,7 @@ public class FancyNameAPI {
         Minecraft minecraft = Minecraft.getInstance();
         User user = minecraft.getUser();
         try {
-            minecraft.services().sessionService().joinServer(user.getProfileId(), user.getAccessToken(), serverId.get());
+            minecraft.getMinecraftSessionService().joinServer(user.getProfileId(), user.getAccessToken(), serverId.get());
         } catch (AuthenticationException e) {
             LOGGER.warn("Failed to authenticate user with challenge {}", serverId.get(), e);
             return -3;

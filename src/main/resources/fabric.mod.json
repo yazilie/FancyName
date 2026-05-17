@@ -23,7 +23,7 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
-    "minecraft": ">=1.21.9 <=1.21.11",
+    "minecraft": ">=1.21.3 <=1.21.8",
     "fabric-language-kotlin": "*",
     "adventure-platform-fabric": "*"
   }

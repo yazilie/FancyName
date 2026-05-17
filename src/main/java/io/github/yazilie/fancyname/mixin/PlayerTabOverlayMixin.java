@@ -14,7 +14,7 @@ import static io.github.yazilie.fancyname.FancyName.CONFIG;
 public class PlayerTabOverlayMixin {
     @ModifyReturnValue(method = "getNameForDisplay", at = @At("RETURN"))
     public Component getNameForDisplay(Component original, PlayerInfo playerInfo) {
-        if(CONFIG.playerList()) return FancyName.applyName(playerInfo.getProfile().name(), original);
+        if(CONFIG.playerList()) return FancyName.applyName(playerInfo.getProfile().getName(), original);
         else return original;
     }
 }
