@@ -5,7 +5,10 @@
   "name": "FancyName",
   "description": "Custom name formatting with MiniMessage. Visible to all FancyName users!",
   "authors": [ "yazilie" ],
-  "contact": {},
+  "contact": {
+    "sources": "https://github.com/yazilie/FancyName",
+    "issues": "https://github.com/yazilie/FancyName/issues"
+  },
   "license": "All-Rights-Reserved",
   "icon": "assets/fancyname/icon.png",
   "environment": "client",
