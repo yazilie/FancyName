@@ -9,7 +9,7 @@
     "sources": "https://github.com/yazilie/FancyName",
     "issues": "https://github.com/yazilie/FancyName/issues"
   },
-  "license": "All-Rights-Reserved",
+  "license": "GPL-3.0",
   "icon": "assets/fancyname/icon.png",
   "environment": "client",
   "entrypoints": {
