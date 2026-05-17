@@ -5,6 +5,8 @@ Nick yourself—or stylize your existing username. Everyone using the mod will b
 ## Usage
 In-game, type `/fancy set <minimessage>`
 
+It is recommended to keep your original username text the same, as some people have the 'Style Changes Only' option enabled.
+
 ### Example
 `/fancy set <gradient:#FF76C1:#FFFFFF>yazilie</gradient>`
 
@@ -18,4 +20,4 @@ You can use [Birdflop](https://www.birdflop.com/resources/rgb/) to generate styl
 - Disable nicknames in the player list
 - Disable nicknames in game
 
-Access the config via [Mod Menu](https://modrinth.com/mod/modmenu)
+Access the config via [Mod Menu](https://modrinth.com/mod/modmenu), or turn it on/off in-game with `/fancy <on|off>`
