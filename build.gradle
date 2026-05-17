@@ -10,7 +10,6 @@ base {
 }
 
 repositories {
-    mavenCentral()
     maven { url 'https://maven.wispforest.io/releases/' }
     maven { url 'https://jitpack.io' }
 }
