@@ -1,18 +1,25 @@
-![FancyName banner](https://cdn.modrinth.com/data/alaQKApY/images/356075c465c5edad7cc7f986941bfd8908f4c104.png)
+![FancyName Header](https://cdn.modrinth.com/data/alaQKApY/images/3b03b1d69b52b4a072242e7434a60c44a8e78b2b.png)
 ---
 Nick yourself—or stylize your existing username. Everyone using the mod will be able to see your nickname on any server.
 
 ## Usage
-In-game, type `/fancy set <minimessage>`
+In-game, type `/fancy set <nickname>`
 
 It is recommended to keep your original username text the same, as some people have the 'Style Changes Only' option enabled.
 
-### Example
-`/fancy set <gradient:#FF76C1:#FFFFFF>yazilie</gradient>`
+## Styling
+FancyName uses [MiniMessage](https://docs.papermc.io/adventure/minimessage/) for styling. Full MiniMessage format options can be found [here](https://docs.papermc.io/adventure/minimessage/format/).
 
-![Stylized Name Demo](https://cdn.modrinth.com/data/alaQKApY/images/738efc9c0d79b58eacc946aa1e1e298f4a9849dc.png)
+It may be more convient for you to use a GUI to create MiniMessage styles. Here are a few MiniMessage GUI options:
+- [Birdflop](https://www.birdflop.com/resources/rgb/) - Generate gradient names with ease. Make sure to set 'Color Format' to 'MiniMessage'
+- [MiniMessage Web Editor](https://webui.advntr.dev/) - Full MiniMessage editor.
 
-You can use [Birdflop](https://www.birdflop.com/resources/rgb/) to generate stylized names with ease. Make sure to set 'Color Format' to 'MiniMessage'
+## Examples
+```/fancy set <gradient:#FF76C1:#FFFFFF>yazilie</gradient>```
+
+```/fancy set <b><red>NOT</red></b> <gradient:red:white>yazilie</gradient>```
+
+![FancyName Demo](https://cdn.modrinth.com/data/alaQKApY/images/53b5acd847a9cf26fa1888062cc451f1ca613ca8.png)
 
 ## Config Options
 - Enable/Disable the mod
