@@ -13,7 +13,7 @@ public class TextEditor {
     
     public static Component modifyText(Component original, String replace, Component replacement) {
         FormattedCharSequence formattedCharSequence = original.getVisualOrderText();
-        String originalString = original.getString();
+        String originalString = original.getString().replaceAll("§.?", "");
 
         if(!originalString.contains(replace)) return original;
 
