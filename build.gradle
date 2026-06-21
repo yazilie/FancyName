@@ -6,8 +6,14 @@ version = "${property("mod.version")}+${sc.current.version}"
 base.archivesName = property("mod.id") as String
 
 repositories {
-    maven { url 'https://maven.wispforest.io/releases/' }
-    maven { url 'https://jitpack.io' }
+    maven {
+        name 'Xander Maven'
+        url 'https://maven.isxander.dev/releases'
+    }
+    maven {
+        name = "Terraformers"
+        url = "https://maven.terraformersmc.com/"
+    }
 }
 
 dependencies {
@@ -22,9 +28,9 @@ dependencies {
     implementation "net.kyori:adventure-text-minimessage:${property("deps.adventure")}"
     modImplementation "net.kyori:adventure-platform-fabric:${property("deps.adventure_fabric")}"
 
-    modImplementation "io.wispforest:owo-lib:${property("deps.owo")}"
-    include "io.wispforest:owo-sentinel:${property("deps.owo")}"
-    annotationProcessor modImplementation("io.wispforest:owo-lib:${property("deps.owo")}")
+    modImplementation "dev.isxander:yet-another-config-lib:${property("deps.yacl")}"
+
+    modImplementation "com.terraformersmc:modmenu:${property("deps.modmenu")}"
 
     implementation include("com.squareup.okhttp3:okhttp:${property("deps.okhttp")}")
     implementation include("com.squareup.okio:okio:${property("deps.okio")}")

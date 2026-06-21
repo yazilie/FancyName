@@ -4,8 +4,8 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
-import io.github.yazilie.fancyname.FancyName;
 import io.github.yazilie.fancyname.FancyNameAPI;
+import io.github.yazilie.fancyname.config.FancyNameConfig;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.kyori.adventure.platform.modcommon.MinecraftClientAudiences;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -15,6 +15,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import okhttp3.*;
 
+import static io.github.yazilie.fancyname.FancyName.CONFIG;
 import static io.github.yazilie.fancyname.FancyName.MOD_ID;
 
 //? if >=26.1 {
@@ -71,7 +72,8 @@ public class FancyNameCommand {
     }
 
     private static int executeToggle(CommandContext<FabricClientCommandSource> context, boolean enabled) {
-        FancyName.CONFIG.enabled(enabled);
+        CONFIG.get().enabled = enabled;
+        FancyNameConfig.HANDLER.save();
         if(enabled) context.getSource().sendFeedback(Component.translatable("command.fancyname.enabled"));
         else context.getSource().sendFeedback(Component.translatable("command.fancyname.disabled"));
         return Command.SINGLE_SUCCESS;

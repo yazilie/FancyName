@@ -9,11 +9,9 @@
   "exception.fancyname.api": "Failed to access FancyName API",
   "exception.fancyname.authentication": "Failed to authenticate with FancyName API. This is likely due to a lack of internet or an invalid session",
 
-  "text.config.fancyname.title": "FancyName Config",
-  "text.config.fancyname.option.enabled": "Enabled",
-  "text.config.fancyname.option.onlyStyles": "Style changes only",
-  "text.config.fancyname.option.onlyStyles.tooltip": "Only allow nicknames that keep the original username text, while still allowing custom styles.",
-
-  "text.config.fancyname.option.playerList": "Player list",
-  "text.config.fancyname.option.nameTags": "Name tags"
+  "yacl3.config.fancyname:config.category.main": "FancyName Config",
+  "yacl3.config.fancyname:config.enabled": "Enabled",
+  "yacl3.config.fancyname:config.onlyStyles": "Style changes only",
+  "yacl3.config.fancyname:config.playerList": "Player list",
+  "yacl3.config.fancyname:config.nameTags": "Name tags"
 }
