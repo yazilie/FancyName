@@ -73,7 +73,7 @@ publishMods {
 
     modrinth {
         accessToken = providers.environmentVariable("MODRINTH_API_KEY")
-        projectId = "fancyname"
+        projectId = "alaQKApY"
         minecraftVersions = compatibleVersions
     }
 
