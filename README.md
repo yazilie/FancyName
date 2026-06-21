@@ -28,3 +28,7 @@ It may be more convient for you to use a GUI to create MiniMessage styles. Here 
 - Disable nicknames in game
 
 Access the config via [Mod Menu](https://modrinth.com/mod/modmenu), or turn it on/off in-game with `/fancy <on|off>`
+
+## Dependencies
+FancyName requires [Fabric API](https://modrinth.com/mod/fabric-api), [adventure-platform-mod](https://modrinth.com/mod/adventure-platform-mod), [YetAnotherConfigLib (YACL)](https://modrinth.com/mod/yacl) and [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin).
+[Mod Menu](https://modrinth.com/mod/modmenu) is optionally required for accessing the config screen.
