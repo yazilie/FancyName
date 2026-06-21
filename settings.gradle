@@ -1,9 +1,38 @@
 pluginManagement {
     repositories {
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+
         maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
         }
-        gradlePluginPortal()
+
+        maven {
+            url = "https://maven.kikugie.dev/snapshots"
+            name = "KikuGie Snapshots"
+        }
+
+        maven {
+            url = "https://maven.kikugie.dev/releases"
+            name = "KikuGie Releases"
+        }
+    }
+}
+
+plugins {
+    id 'dev.kikugie.stonecutter' version "0.9.6"
+    id 'dev.kikugie.loom-back-compat' version "0.3"
+    id 'org.gradle.toolchains.foojay-resolver-convention' version "1.0.0"
+}
+
+stonecutter {
+    // Enable Groovy DSL, as Stonecutter uses Kotlin by default
+    kotlinController = false
+    centralScript = "build.gradle"
+
+    create(getRootProject()) {
+        versions "1.21.11", "1.21.8", "26.2"
     }
 }

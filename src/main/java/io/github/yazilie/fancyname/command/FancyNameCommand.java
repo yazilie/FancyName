@@ -16,8 +16,16 @@ import net.minecraft.network.chat.MutableComponent;
 import okhttp3.*;
 
 import static io.github.yazilie.fancyname.FancyName.MOD_ID;
+
+//? if >=26.1 {
+/*import static net.fabricmc.fabric.api.client.command.v2.ClientCommands.argument;
+import static net.fabricmc.fabric.api.client.command.v2.ClientCommands.literal;
+*///?} else {
 import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.argument;
 import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.literal;
+//?}
+
+
 
 public class FancyNameCommand {
     public static void register(CommandDispatcher<FabricClientCommandSource> dispatcher) {

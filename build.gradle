@@ -1,13 +1,9 @@
 plugins {
-    id 'fabric-loom' version "$loom_version"
+    id 'dev.kikugie.loom-back-compat'
 }
 
-version = "${project.mod_version}+1.21.9-1.21.11"
-group = project.maven_group
-
-base {
-    archivesName = project.archives_base_name
-}
+version = "${property("mod.version")}+${sc.current.version}"
+base.archivesName = property("mod.id") as String
 
 repositories {
     maven { url 'https://maven.wispforest.io/releases/' }
@@ -16,61 +12,46 @@ repositories {
 
 dependencies {
     // To change the versions see the gradle.properties file
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    minecraft "com.mojang:minecraft:${sc.current.version}"
+    loomx.applyMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${property("deps.fabric_loader")}"
 
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${property("deps.fabric_api")}"
 
-    implementation "net.kyori:adventure-api:${project.adventure_version}"
-    implementation "net.kyori:adventure-text-minimessage:${project.adventure_version}"
-    modImplementation "net.kyori:adventure-platform-fabric:${project.adventure_fabric_version}"
+    implementation "net.kyori:adventure-api:${property("deps.adventure")}"
+    implementation "net.kyori:adventure-text-minimessage:${property("deps.adventure")}"
+    modImplementation "net.kyori:adventure-platform-fabric:${property("deps.adventure_fabric")}"
 
-    implementation include("com.squareup.okhttp3:okhttp:${project.okhttp_version}")
-    implementation include("com.squareup.okio:okio:${project.okio_version}")
-    implementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+    modImplementation "io.wispforest:owo-lib:${property("deps.owo")}"
+    include "io.wispforest:owo-sentinel:${property("deps.owo")}"
+    annotationProcessor modImplementation("io.wispforest:owo-lib:${property("deps.owo")}")
 
-    implementation "com.google.code.gson:gson:${project.gson_version}"
+    implementation include("com.squareup.okhttp3:okhttp:${property("deps.okhttp")}")
+    implementation include("com.squareup.okio:okio:${property("deps.okio")}")
+    implementation "net.fabricmc:fabric-language-kotlin:${property("deps.fabric_kotlin")}"
 
-    modImplementation "io.wispforest:owo-lib:${project.owo_version}"
-    include "io.wispforest:owo-sentinel:${project.owo_version}"
-    annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
+    implementation "com.google.code.gson:gson:${property("deps.gson")}"
 }
+
+def props = [
+        "id" : property("mod.id"),
+        "version" : property("mod.version"),
+        "name" : property("mod.name"),
+        "minecraft" : property("mod.mc_compat"),
+        "fabric_loader" : property("deps.fabric_loader")
+]
 
 processResources {
-    inputs.property "version", project.version
-    inputs.property "minecraft_version", project.minecraft_version
-    inputs.property "loader_version", project.loader_version
-    filteringCharset "UTF-8"
+    inputs.properties(props)
 
     filesMatching("fabric.mod.json") {
-        expand "version": project.version,
-                "minecraft_version": project.minecraft_version,
-                "loader_version": project.loader_version
+        expand(props)
     }
 }
 
-def targetJavaVersion = 21
-tasks.withType(JavaCompile).configureEach {
-    // ensure that the encoding is set to UTF-8, no matter what the system default is
-    // this fixes some edge cases with special characters not displaying correctly
-    // see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
-    // If Javadoc is generated, this must be specified in that task too.
-    it.options.encoding = "UTF-8"
-    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
-        it.options.release.set(targetJavaVersion)
-    }
-}
+def requiredJava = sc.current.parsed.matches('<=1.21.11') ? JavaVersion.VERSION_21 : JavaVersion.VERSION_25
 
 java {
-    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
-    if (JavaVersion.current() < javaVersion) {
-        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
-    }
-}
-
-jar {
-    from("LICENSE") {
-        rename { "${it}_${project.archives_base_name}" }
-    }
+    targetCompatibility = requiredJava
+    sourceCompatibility = requiredJava
 }

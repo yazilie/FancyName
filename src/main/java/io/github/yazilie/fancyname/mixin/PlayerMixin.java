@@ -13,7 +13,12 @@ import static io.github.yazilie.fancyname.FancyName.CONFIG;
 public class PlayerMixin {
     @ModifyReturnValue(method = "getDisplayName", at = @At("RETURN"))
     public Component getDisplayName(Component original) {
-        if(CONFIG.nameTags()) return FancyName.applyName(((Player) (Object) this).getPlainTextName(), original);
+        if(CONFIG.nameTags()) {
+            //? if <=1.21.8 {
+            /*return FancyName.applyName(((Player) (Object) this).getScoreboardName(), original);
+            *///?} else
+            return FancyName.applyName(((Player) (Object) this).getPlainTextName(), original);
+        }
         else return original;
     }
 }

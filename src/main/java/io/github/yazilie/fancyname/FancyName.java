@@ -3,7 +3,12 @@ package io.github.yazilie.fancyname;
 import io.github.yazilie.fancyname.command.FancyNameCommand;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+
+//? if >=26.1 {
+/*import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLevelEvents;
+*///?} else
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientWorldEvents;
+
 import net.minecraft.network.chat.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,10 +32,17 @@ public class FancyName implements ClientModInitializer {
     }
 
     private static void registerCacheRefresher() {
+        //? if >=26.1 {
+        /*ClientLevelEvents.AFTER_CLIENT_LEVEL_CHANGE.register((_, _) -> {
+            FancyNameAPI.refreshNames();
+            TextEditor.cleanCache();
+        });
+        *///?} else {
         ClientWorldEvents.AFTER_CLIENT_WORLD_CHANGE.register((client, world) -> {
             FancyNameAPI.refreshNames();
             TextEditor.cleanCache();
         });
+        //?}
     }
 
     public static Component applyName(String username, Component original) {

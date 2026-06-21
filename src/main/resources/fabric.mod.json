@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "fancyname",
+  "id": "${id}",
   "version": "${version}",
-  "name": "FancyName",
+  "name": "${name}",
   "description": "Custom name formatting with MiniMessage. Visible to all FancyName users!",
   "authors": [ "yazilie" ],
   "contact": {
@@ -21,9 +21,9 @@
     "fancyname.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft}",
+    "fabricloader": ">=${fabric_loader}",
     "fabric-api": "*",
-    "minecraft": ">=1.21.9 <=1.21.11",
     "fabric-language-kotlin": "*",
     "adventure-platform-fabric": "*"
   }
